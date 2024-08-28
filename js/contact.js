@@ -38,7 +38,7 @@ function submitForm(event) {
   
       // Mengirim data via email
       const link = document.createElement("a");
-      link.href = `mailto:irhamrahmatsaleh1997@gmail.com?subject=${encodeURIComponent(selectSubject)}&body=Hello, my name is ${encodeURIComponent(inputName)}.%0D%0A%0D%0APhone Number: ${encodeURIComponent(inputPhone)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(inputMessage)}`;
+      link.href = `mailto:faya.it27@gmail.com?subject=${encodeURIComponent(selectSubject)}&body=Hello, my name is ${encodeURIComponent(inputName)}.%0D%0A%0D%0APhone Number: ${encodeURIComponent(inputPhone)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(inputMessage)}`;
       link.click();
   
       alert("Your data has been submitted.");
