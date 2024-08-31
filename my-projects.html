@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects - Muhammad Fayakuun</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style-my-projects.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+  <header>
+    <nav>
+        <ul id="left-menu">
+            <li id="logo">
+                <a href="#"><img src="https://dumbways.id/assets/images/brandred.png" alt="Logo"></a>
+            </li>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="my-projects.html"><b>My Project</b></a>
+            </li>
+        </ul>
+        <ul id="right-menu">
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+    </nav>
+</header>
+  <main>
+    <div class="my-project">
+      <div class="my-project-form">
+        <div class="form-container">
+          <form id="my-projectForm" onsubmit="addOrUpdateMyProject(event)">
+            <h1 id="form-title" style="text-align:center">ADD MY PROJECT</h1>
+            <input type="hidden" id="input-myProject-id" />
+            <div>
+              <label for="input-myProject-title">Project Name</label>
+              <input id="input-myProject-title" type="text" />
+            </div>
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="start-date">Start Date</label>
+                <input style="width:90%;" type="date" id="start-date" name="start-date" required>
+              </div>
+              <div class="form-group">
+                <label for="end-date">End Date</label>
+                <input type="date" id="end-date" name="end-date" required>
+              </div>
+            </div>
+            <div>
+              <label for="input-myProject-content">Description</label>
+              <textarea id="input-myProject-content"></textarea>
+            </div>
+            <div>
+              <label for="myProject-category">Category</label>
+              <div id="myProject-category" class="checkbox-container">
+                <label><input type="checkbox" value="Node Js"> Node Js</label>
+                <label><input type="checkbox" value="React Js"> React Js</label>
+                <label><input type="checkbox" value="Next Js"> Next Js</label>
+                <label><input type="checkbox" value="TypeScript"> TypeScript</label>
+              </div>
+            </div>
+            <div>
+              <label>Upload Image</label>
+              <div class="input-myProject-image-group">
+                <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required>
+                <i class="fas fa-paperclip"></i>
+              </div>
+            </div>
+            <div class="button-group">
+              <button type="submit">submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="contents" class="my-project-list">
+        <!-- dynamic content will be here -->
+      </div>
+    </div>
+  </main>
+  <script src="js/my-projects.js"></script>
+</body>
+
+</html>
