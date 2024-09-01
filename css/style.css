@@ -48,3 +48,15 @@ nav {
     border-radius: 10px;
     margin-right: 20px;
 }
+
+button {
+    font-family:'Poppins'
+}
+
+input{
+    font-family: 'Poppins';
+}
+
+select{
+    font-family: 'Poppins';
+}

@@ -12,17 +12,9 @@ function saveProjectsToLocalStorage(projects) {
 // Fungsi untuk menambahkan proyek baru
 function addProject(project) {
   const projects = getProjectsFromLocalStorage();
-  projects.push(project);
+  projects.unshift(project);
   saveProjectsToLocalStorage(projects);
   displayProjects(); // Tampilkan ulang proyek setelah ditambah
-}
-
-// Fungsi untuk mengupdate proyek
-function updateProject(updatedProject) {
-  let projects = getProjectsFromLocalStorage();
-  projects = projects.map(project => project.id === updatedProject.id ? updatedProject : project);
-  saveProjectsToLocalStorage(projects);
-  displayProjects(); // Tampilkan ulang proyek setelah diupdate
 }
 
 // Fungsi untuk menghapus proyek
@@ -75,7 +67,12 @@ function displayProjects() {
 
     // Tambahkan deskripsi singkat
     const description = document.createElement('p');
-    description.textContent = project.description.slice(0, 50) + '...'; // Tampilkan hanya sebagian deskripsi
+    if (project.description.length>30){
+      description.textContent = project.description.slice(0, 30) + '...'; // Tampilkan hanya sebagian deskripsi
+    } else {
+      description.textContent = project.description
+    }
+    
     card.appendChild(description);
 
     // Tambahkan ikon teknologi
@@ -95,57 +92,23 @@ function displayProjects() {
     const editButton = document.createElement('button');
     editButton.classList.add('edit');
     editButton.textContent = 'Edit';
-    editButton.onclick = (e) => {
-      e.stopPropagation(); // Hentikan event click card agar tidak mengarahkan ke halaman detail
-      localStorage.setItem('editingProjectId', project.id);
-      window.location.href = 'update-my-project.html'; // Arahkan ke halaman edit
-    };
     cardButtons.appendChild(editButton);
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     deleteButton.textContent = 'Delete';
     deleteButton.onclick = (e) => {
-      e.stopPropagation(); // Hentikan event click card agar tidak mengarahkan ke halaman detail
       deleteProject(project.id);
     };
     cardButtons.appendChild(deleteButton);
 
     card.appendChild(cardButtons);
 
-    // Tambahkan event listener untuk mengarahkan ke halaman detail proyek
-    card.onclick = () => {
-      localStorage.setItem('currentProjectId', project.id);
-      window.location.href = 'project-detail.html';
-    };
-
+    
     projectCardsContainer.appendChild(card);
   });
 }
 
-// Fungsi untuk mengedit proyek
-function loadEditForm() {
-  const editingProjectId = localStorage.getItem('editingProjectId');
-  if (editingProjectId) {
-    const projects = getProjectsFromLocalStorage();
-    const project = projects.find(p => p.id === editingProjectId);
-    if (project) {
-      document.getElementById('projectName').value = project.name;
-      document.getElementById('startDate').value = project.startDate;
-      document.getElementById('endDate').value = project.endDate;
-      document.getElementById('description').value = project.description;
-
-      // Centang checkbox teknologi
-      const techCheckboxes = document.querySelectorAll('.tech-checkboxes input[type="checkbox"]');
-      techCheckboxes.forEach(checkbox => {
-        checkbox.checked = project.technologies.includes(checkbox.value);
-      });
-
-      document.getElementById('uploadImage').dataset.editingId = project.id;
-      localStorage.removeItem('editingProjectId'); // Hapus ID setelah memuat form
-    }
-  }
-}
 
 // Event listener untuk submit form
 document.getElementById('projectForm').addEventListener('submit', function (e) {
@@ -206,11 +169,4 @@ document.getElementById('projectForm').addEventListener('submit', function (e) {
   }
 });
 
-// Tampilkan proyek saat halaman dimuat
-document.addEventListener('DOMContentLoaded', function () {
-  displayProjects();
-  // Muat form edit jika berada di halaman ADD MY PROJECT
-  if (window.location.pathname.includes('update-my-project.html')) {
-    loadEditForm();
-  }
-});
+displayProjects();
