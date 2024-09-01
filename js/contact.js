@@ -21,7 +21,7 @@ function submitForm(event) {
     }
   
     // Konfirmasi data
-    const isConfirmed = confirm("Is your data correct?");
+    const isConfirmed = confirm(`Is your data correct? \nName: ${inputName} \nEmail: ${inputEmail} \nPhoneNumber: ${inputPhone} \nSubject: ${selectSubject} \nMessage: ${inputMessage}`);
   
     if (isConfirmed) {
       // Membuat objek contact untuk menyimpan data
