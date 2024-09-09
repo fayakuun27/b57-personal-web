@@ -1,72 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Me</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-contact.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-contact.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul id="left-menu">
-                <li id="logo">
-                    <a href="#"><img src="https://dumbways.id/assets/images/brandred.png" alt="Logo"></a>
-                </li>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="my-projects.html">My Project</a>
-                </li>
-            </ul>
-            <ul id="right-menu">
-                <li><a href="contact.html"><b>Contact Me</b></a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul id="left-menu">
+          <li id="logo">
+            <a href="#"
+              ><img
+                src="https://dumbways.id/assets/images/brandred.png"
+                alt="Logo"
+            /></a>
+          </li>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="my-projects.html">Add Project</a>
+          </li>
+          <li>
+            <a href="testimoni.html">Testimoni</a>
+          </li>
+        </ul>
+        <ul id="right-menu">
+          <li>
+            <a href="contact.html"><b>Contact Me</b></a>
+          </li>
+        </ul>
+        <button class="hamburger-button" onclick="toggleHamburger()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div
+          id="hamburger-container"
+          class="hamburger-container hamburger-hide"
+        >
+          <a href="index.html">Home</a>
+          <a href="add-project.html">Add Project</a>
+          <a href="testimoni.html">Testimoni</a>
+          <a href="contact.html" class="hamburger-active">Contact Me</a>
+        </div>
+      </nav>
     </header>
     <main>
-        <section class="contact-container">
-            <form class="contact-form" onsubmit="submitForm(event)">
-              <h2 style="text-align:center">GET IN TOUCH</h2>
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <select id="subject" name="subject">
-                  <option value="">Select a subject</option>
-                  <option value="general_inquiry">General Inquiry</option>
-                  <option value="feedback">Feedback</option>
-                  <option value="support">Support</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message"></textarea>
-              </div>
-              <div class="form-group">
-                <input style="width:30%" id="submit" type="submit" value="submit">
-              </div>
-            </form>
-            <script src="js/contact.js"></script>
-      
-      
-      
-        </section>
+      <section class="contact-container">
+        <form class="contact-form" onsubmit="submitForm(event)">
+          <h2 style="text-align: center">GET IN TOUCH</h2>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option value="general_inquiry">General Inquiry</option>
+              <option value="feedback">Feedback</option>
+              <option value="support">Support</option>
+              <option value="partnership">Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <div class="form-group">
+            <input
+              style="width: 30%"
+              id="submit"
+              type="submit"
+              value="submit"
+            />
+          </div>
+        </form>
+        <script src="js/contact.js"></script>
+        <script src="js/nav.js"></script>
+      </section>
     </main>
-</body>
+  </body>
 </html>

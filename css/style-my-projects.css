@@ -57,6 +57,7 @@ textarea {
   display: flex;
   align-items: center;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .file-upload input[type="file"] {
