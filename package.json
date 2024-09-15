@@ -1,16 +1,16 @@
 {
-  "name": "b57-1-personal-web",
+  "name": "stage1",
   "version": "1.0.0",
-  "description": "",
+  "description": "personal web dumbways.id",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "faya-kun",
+  "author": "suryaelidanto",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "express": "^4.21.0",
+    "express": "^4.19.2",
     "express-flash": "^0.0.2",
     "express-session": "^1.18.0",
     "hbs": "^4.2.0",
