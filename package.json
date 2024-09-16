@@ -4,7 +4,9 @@
   "description": "personal web dumbways.id",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "suryaelidanto",
   "license": "ISC",
